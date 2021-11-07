@@ -1,4 +1,4 @@
-package com.riadsafowan.recyclerView.ui.adapter
+package com.riadsafowan.recyclerView.ui
 
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +9,6 @@ import com.riadsafowan.recyclerView.R
 import com.riadsafowan.recyclerView.databinding.ItemDirectorBinding
 import com.riadsafowan.recyclerView.databinding.ItemMovieBinding
 import com.riadsafowan.recyclerView.databinding.ItemTitleBinding
-import com.riadsafowan.recyclerView.ui.RecyclerViewItem
 
 class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
 

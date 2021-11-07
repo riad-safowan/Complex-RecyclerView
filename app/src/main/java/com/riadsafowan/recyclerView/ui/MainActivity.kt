@@ -8,7 +8,6 @@ import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.riadsafowan.recyclerView.data.remote.Resource
 import com.riadsafowan.recyclerView.databinding.ActivityMainBinding
-import com.riadsafowan.recyclerView.ui.adapter.RecyclerViewAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -48,13 +47,40 @@ class MainActivity : AppCompatActivity() {
             adapter = recyclerViewAdapter
         }
 
-        recyclerViewAdapter.itemClickListener = {view, item, position ->
-            when(item){
-                is RecyclerViewItem.Director -> Toast.makeText(this, "Director clicked", Toast.LENGTH_SHORT).show()
-                is RecyclerViewItem.Movie -> Toast.makeText(this, "Movie clicked", Toast.LENGTH_SHORT).show()
-                is RecyclerViewItem.Title ->  Toast.makeText(this, "Title clicked", Toast.LENGTH_SHORT).show()
+        recyclerViewAdapter.itemClickListener = { view, item, position ->
+            when (item) {
+                is RecyclerViewItem.Director -> Toast.makeText(
+                    this,
+                    "Director clicked",
+                    Toast.LENGTH_SHORT
+                ).show()
+                is RecyclerViewItem.Movie -> Toast.makeText(
+                    this,
+                    "Movie clicked",
+                    Toast.LENGTH_SHORT
+                ).show()
+                is RecyclerViewItem.Title -> Toast.makeText(
+                    this,
+                    "Title clicked",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
+        }
 
+        binding.apply {
+            button1.setOnClickListener {
+                viewModel.setdata()
+            }
+            button2.setOnClickListener {k->
+                viewModel.getData()?.forEach {it->
+                    Toast.makeText(
+                        this@MainActivity,
+                        it.firstName + " " + it.lastName,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+
+            }
         }
 
     }
