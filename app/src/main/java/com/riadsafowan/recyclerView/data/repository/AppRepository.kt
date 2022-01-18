@@ -1,7 +1,6 @@
 package com.riadsafowan.recyclerView.data.repository
 
 import androidx.annotation.WorkerThread
-import androidx.lifecycle.LiveData
 import com.riadsafowan.recyclerView.data.local.Person
 import com.riadsafowan.recyclerView.data.local.PersonDao
 import kotlinx.coroutines.Dispatchers

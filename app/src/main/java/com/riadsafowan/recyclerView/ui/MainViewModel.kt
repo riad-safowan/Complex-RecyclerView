@@ -4,14 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.riadsafowan.recyclerView.data.local.AppDatabase
 import com.riadsafowan.recyclerView.data.local.Person
 import com.riadsafowan.recyclerView.data.remote.Resource
 import com.riadsafowan.recyclerView.data.repository.ApiRepository
 import com.riadsafowan.recyclerView.data.repository.AppRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
-import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
